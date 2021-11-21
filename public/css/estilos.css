@@ -159,6 +159,12 @@ i {
   font-size: 30px;
 }
 
+.botonFormDetalle {
+  padding: 0px;
+  background-color: none;
+  border: none;
+}
+
 @media (min-width: 481px) {
   #separacionNav {
     width: 47%;
