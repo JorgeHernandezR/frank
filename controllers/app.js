@@ -15,8 +15,10 @@ $(document).ready(function () {
               <img src="${producto.imagen}" alt="esperanding">
               <div class="nombre"> $ ${producto.nombre} </div>
               <div class="precio"> $ ${producto.precio} </div>
-              <i class="fas fa-trash-alt"></i>
-              <i class="fas fa-pen"></i>
+              <div class="iconoArticulo">
+              <i class="fas fa-trash-alt">
+              </i> <i class="fas fa-pen"> </div>
+              
           </article>
         </form> `;
         });
@@ -44,6 +46,9 @@ $(document).ready(function () {
             <img src="${producto.imagen}" alt="esperanding">
             <div class="nombre"> ${producto.nombre} </div>
             <div class="precio"> $ ${producto.precio} </div>
+            <div class="iconoArticulo">
+              <i class="fas fa-trash-alt">
+              </i> <i class="fas fa-pen"> </div>
         </article>
         </button>
       </form> `;
@@ -93,6 +98,9 @@ console.log("antes de empesar");
          <img src="${objs.imagen}" alt="esperanding">
          <div class="nombre"> $ ${objs.nombre} </div>
          <div class="precio"> $ ${objs.precio} </div>
+         <div class="iconoArticulo">
+              <i class="fas fa-trash-alt">
+              </i> <i class="fas fa-pen"> </div>
      </article>
      </button>
    </form> `;
