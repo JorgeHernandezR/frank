@@ -15,6 +15,8 @@ $(document).ready(function () {
               <img src="${producto.imagen}" alt="esperanding">
               <div class="nombre"> $ ${producto.nombre} </div>
               <div class="precio"> $ ${producto.precio} </div>
+              <i class="fas fa-trash-alt"></i>
+              <i class="fas fa-pen"></i>
           </article>
         </form> `;
         });
