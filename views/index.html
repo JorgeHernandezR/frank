@@ -20,13 +20,7 @@
     <title>Friki-Art</title>
   </head>
 
-  <script
-  src="https://code.jquery.com/jquery-3.6.0.js"
-  integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
-  crossorigin="anonymous">
-</script>
-
-  <script src="../controllers/app.js"></script>
+  
 
   
 
@@ -45,7 +39,7 @@
           <br>
           <li class="lihorizontal" id="liInicio" ><a href="./index.html"> Inicio </a></li>  
           <li class="lihorizontal" id="liTienda"><a href=""> Tienda </a></li>  
-          <li id="liBusquedaEscritorio"> <i class="fas fa-search"></i> <input type="text" name="" id="inputBusqueda" /></li>   
+          <li id="liBusquedaEscritorio"> <i class="fas fa-search"></i> <input type="text" name="" id="buscar" /></li>   
           <div id="separacionNav"></div>
           <li class="lihorizontal" id="iconoLogin">
             <a href="./login.html"> <i class="fas fa-user-circle"></i> </a>
@@ -57,14 +51,21 @@
         </ul>
       </nav>
     </header>
+    <ul id="ulMuestra">
+      <li>Hola aqui estoy </li>
+    </ul>
+    <img src="../public/images/banner.jpg" alt="esperanding" id="banner"/> 
     <main id="mainIndex">
+     
 
-      <img src="../public/images/banner.jpg" alt="esperanding" id="banner"/> 
-  
+      
+    
       
         
 
     </main>
+
+   
 
     <footer>
       <p>
@@ -96,4 +97,12 @@
       </ul>
     </footer>
   </body>
+
+  <script
+  src="https://code.jquery.com/jquery-3.6.0.js"
+  integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+  crossorigin="anonymous">
+</script>
+
+  <script src="../controllers/app.js"></script>
 </html>
