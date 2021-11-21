@@ -1,3 +1,5 @@
+let id = "25";
+
 $(document).ready(function () {
  
   function listarTodo(){
@@ -36,7 +38,7 @@ $(document).ready(function () {
       console.log(productos);
       productos.forEach((producto) => {
         plantilla += `
-                 <form method="POST" action = "./detalleProducto.html" class="formDetalle">
+                 <form productoId="${producto.id} method="POST" action = "./detalleProducto.html" class="formDetalle">
                  <button type=submit class="botonFormDetalle" style="padding : 0px ; background-color:#b7e3f7; border-color=#b7e3f7">
         <article class="articulo">
             <img src="${producto.imagen}" alt="esperanding">
@@ -85,7 +87,7 @@ console.log("antes de empesar");
             let template='';
             obj.forEach((objs)=>{
               template+= `
-              <form method="POST" action = "./detalleProducto.html" class="formDetalle">
+              <form productoId="${objs.id}"" method="POST" action = "./detalleProducto.html" class="formDetalle">
               <button type="submit" class="botonFormDetalle" style="background-color:#b7e3f7; border-color:#b7e3f7; padding:0px">
      <article class="articulo">
          <img src="${objs.imagen}" alt="esperanding">
@@ -104,6 +106,10 @@ console.log("antes de empesar");
   }
     });
 
-    
- 
-});
+   $("form").submit(function () {
+   })
+
+   localStorage.setItem("id", id);
+})
+
+
