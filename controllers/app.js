@@ -39,11 +39,13 @@ $(document).ready(function () {
       productos.forEach((producto) => {
         plantilla += `
                  <form method="POST" action = "./detalleProducto.html" class="formDetalle">
+                 <button type=submit class="botonFormDetalle" style="padding : 0px ; background-color:#b7e3f7; border-color=#b7e3f7">
         <article class="articulo">
             <img src="${producto.imagen}" alt="esperanding">
-            <div class="nombre"> $ ${producto.nombre} </div>
+            <div class="nombre"> ${producto.nombre} </div>
             <div class="precio"> $ ${producto.precio} </div>
         </article>
+        </button>
       </form> `;
       });
       $("#mainIndex").html(plantilla);
@@ -86,11 +88,13 @@ console.log("antes de empesar");
             obj.forEach((objs)=>{
               template+= `
               <form method="POST" action = "./detalleProducto.html" class="formDetalle">
+              <button type="submit" class="botonFormDetalle" style="background-color:#b7e3f7; border-color:#b7e3f7; padding:0px">
      <article class="articulo">
          <img src="${objs.imagen}" alt="esperanding">
          <div class="nombre"> $ ${objs.nombre} </div>
          <div class="precio"> $ ${objs.precio} </div>
      </article>
+     </button>
    </form> `;
             });
             $('#mainIndex').html(template);
