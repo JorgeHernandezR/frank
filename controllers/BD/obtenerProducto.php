@@ -5,8 +5,6 @@ if(isset($_POST["id"])){
 
     $id = $_POST["id"];
     $consulta = "SELECT * FROM producto WHERE id_producto='$id'";
-    echo $consulta;
-
 
     $resultado = mysqli_query($conexion,$consulta);
 

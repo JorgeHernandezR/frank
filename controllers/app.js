@@ -1,8 +1,8 @@
 let id = "25";
 
 $(document).ready(function () {
- 
-  function listarTodo(){
+
+  function listarTodo() {
     $.ajax({
       url: "../controllers/BD/listarProductosIndex.php",
       type: "GET",
@@ -12,18 +12,25 @@ $(document).ready(function () {
         console.log(productos);
         productos.forEach((producto) => {
           plantilla += `
-                   <form method="POST" action = "./detalleProducto.html" class="formDetalle">
+          <form method="POST" action = "./detalleProducto.html" class="formDetalle">
+          <button productoId="${producto.id}" type=submit class="botonFormDetalle" style="padding : 0px ; background-color:#b7e3f7; border-color=#b7e3f7">
           <article class="articulo">
-              <img src="${producto.imagen}" alt="esperanding">
-              <div class="nombre"> $ ${producto.nombre} </div>
-              <div class="precio"> $ ${producto.precio} </div>
-          </article>
+          <img src="${producto.imagen}" alt="esperanding">
+         <div class="nombre"> ${producto.nombre} </div>
+        <div class="precio"> $ ${producto.precio} </div>
+        <div class="iconoArticulo">
+        <a href="" style="color: black"><i class="fas fa-trash-alt" style="font-size: 15px;"></i></a>
+         <a href=""style="color: black"><i class="fas fa-pen" style="font-size: 15px;"></i></a>
+         </div>
+        </article>
+        
+        </button>
         </form> `;
         });
         $("#mainIndex").html(plantilla);
       },
     });
-  
+
   }
 
 
@@ -44,7 +51,12 @@ $(document).ready(function () {
             <img src="${producto.imagen}" alt="esperanding">
             <div class="nombre"> ${producto.nombre} </div>
             <div class="precio"> $ ${producto.precio} </div>
+            <div class="iconoArticulo">
+            <a href="" style="color: black"><i class="fas fa-trash-alt" style="font-size: 15px;"></i></a>
+            <a href=""style="color: black"><i class="fas fa-pen" style="font-size: 15px;"></i></a>
+            </div>
         </article>
+     
         </button>
       </form> `;
       });
@@ -70,9 +82,9 @@ $(document).ready(function () {
 
 
 
-console.log("antes de empesar");
-  $('#buscar').keyup(function(e){
-  
+  console.log("antes de empesar");
+  $('#buscar').keyup(function (e) {
+
     console.log("Empece");
     if($('#buscar').val()){
       if(!($('#buscar').val()==="")){
@@ -92,18 +104,24 @@ console.log("antes de empesar");
          <img src="${objs.imagen}" alt="esperanding">
          <div class="nombre"> $ ${objs.nombre} </div>
          <div class="precio"> $ ${objs.precio} </div>
+         <div class="iconoArticulo">
+         <a href="" style="color: black"><i class="fas fa-trash-alt" style="font-size: 15px;"></i></a>
+         <a href=""style="color: black"><i class="fas fa-pen" style="font-size: 15px;"></i></a>
+         </div>
      </article>
      </button>
    </form> `;
             });
             $('#mainIndex').html(template);
           }
-      })
+        })
+      }
+    } else {
+      listarTodo();
     }
-  }else{
-    listarTodo();
-  }
-    });
+  });
+
+
 
    $(document).on("click", ".botonFormDetalle",function (e) {
      console.log("entre a esta madre");
