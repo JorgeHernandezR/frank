@@ -1,3 +1,5 @@
+let id = "25";
+
 $(document).ready(function () {
 
   function listarTodo() {
@@ -11,7 +13,7 @@ $(document).ready(function () {
         productos.forEach((producto) => {
           plantilla += `
           <form method="POST" action = "./detalleProducto.html" class="formDetalle">
-          <button type=submit class="botonFormDetalle" style="padding : 0px ; background-color:#b7e3f7; border-color=#b7e3f7">
+          <button productoId="${producto.id}" type=submit class="botonFormDetalle" style="padding : 0px ; background-color:#b7e3f7; border-color=#b7e3f7">
           <article class="articulo">
           <img src="${producto.imagen}" alt="esperanding">
          <div class="nombre"> ${producto.nombre} </div>
@@ -43,8 +45,8 @@ $(document).ready(function () {
       console.log(productos);
       productos.forEach((producto) => {
         plantilla += `
-                 <form method="POST" action = "./detalleProducto.html" class="formDetalle">
-                 <button type=submit class="botonFormDetalle" style="padding : 0px ; background-color:#b7e3f7; border-color=#b7e3f7">
+                 <form  method="POST" action = "./detalleProducto.html" class="formDetalle">
+                 <button productoId="${producto.id}" type=submit class="botonFormDetalle" style="padding : 0px ; background-color:#b7e3f7; border-color=#b7e3f7">
         <article class="articulo">
             <img src="${producto.imagen}" alt="esperanding">
             <div class="nombre"> ${producto.nombre} </div>
@@ -84,21 +86,20 @@ $(document).ready(function () {
   $('#buscar').keyup(function (e) {
 
     console.log("Empece");
-    if ($('#buscar').val()) {
-      if (!($('#buscar').val() === "")) {
-        let busca = $('#buscar').val();
-        $.ajax({
-          url: '../controllers/BD/buscar.php',
-          type: 'POST',
-          data: { busca },
-          success: function (response) {
-            console.log(response);
-            let obj = JSON.parse(response);
-            let template = '';
-            obj.forEach((objs) => {
-              template += `
-              <form method="POST" action = "./detalleProducto.html" class="formDetalle">
-              <button type="submit" class="botonFormDetalle" style="background-color:#b7e3f7; border-color:#b7e3f7; padding:0px">
+    if($('#buscar').val()){
+      if(!($('#buscar').val()==="")){
+      let busca=$('#buscar').val();
+      $.ajax({
+        url:'../controllers/BD/buscar.php',
+        type: 'POST',
+        data: {busca},
+        success: function(response){
+          let obj=JSON.parse(response);
+            let template='';
+            obj.forEach((objs)=>{
+              template+= `
+              <form  method="POST" action = "./detalleProducto.html" class="formDetalle">
+              <button productoId="${objs.id}" type="submit" class="botonFormDetalle" style="background-color:#b7e3f7; border-color:#b7e3f7; padding:0px">
      <article class="articulo">
          <img src="${objs.imagen}" alt="esperanding">
          <div class="nombre"> $ ${objs.nombre} </div>
@@ -108,7 +109,6 @@ $(document).ready(function () {
          <a href=""style="color: black"><i class="fas fa-pen" style="font-size: 15px;"></i></a>
          </div>
      </article>
-   
      </button>
    </form> `;
             });
@@ -123,4 +123,19 @@ $(document).ready(function () {
 
 
 
+   $(document).on("click", ".botonFormDetalle",function (e) {
+     console.log("entre a esta madre");
+    let idProducto = $(this).attr("productoId");
+    setId(idProducto);
+    id = idProducto;
+  })
+
+  function setId(id){
+    this.id = id;
+    localStorage.setItem("id", this.id);
+  }
+
+   
 });
+
+
