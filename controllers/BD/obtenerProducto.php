@@ -17,6 +17,7 @@ if(isset($_POST["id"])){
         $json[]= array(
             "id" => $fila["id_producto"],
             "nombre" => $fila["nom_producto"],
+            "descripcion" => $fila["descripcion"],
             "precio" => $fila["precio"],
             "imagen" => $fila["imagen"]
         );

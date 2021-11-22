@@ -18,7 +18,7 @@ $(document).ready(function(){
                 <br>
                 <div class="nombre"> ${producto.nombre}</div>
                 <br>
-                <p class="descripcion"> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Similique, beatae repudiandae id quam quia quod repellat aspernatur. Dolores quasi quidem ducimus. Molestias suscipit voluptatem, sit vitae reiciendis minima explicabo ullam. 
+                <p class="descripcion"> ${producto.descripcion}
                 </p>
               </div>
               <br>
@@ -29,8 +29,7 @@ $(document).ready(function(){
               </div>
             </div>`
 
-            $("#mainDetalle").html
-
+            $("#mainDetalle").html(plantilla);
         }
     })
 })
