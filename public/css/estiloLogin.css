@@ -28,3 +28,19 @@ article a{
     margin-top: 5px;
     color: black
 }
+
+textarea {
+    margin: auto;
+    width: 330px;
+    height: 90px;
+}
+
+.campo {
+    margin: auto;
+    width: 330px;
+    height: 30px;
+}
+
+.titulo {
+    text-align: center;
+}
