@@ -38,8 +38,8 @@ $(document).ready(function () {
       console.log(productos);
       productos.forEach((producto) => {
         plantilla += `
-                 <form productoId="${producto.id} method="POST" action = "./detalleProducto.html" class="formDetalle">
-                 <button type=submit class="botonFormDetalle" style="padding : 0px ; background-color:#b7e3f7; border-color=#b7e3f7">
+                 <form  method="POST" action = "./detalleProducto.html" class="formDetalle">
+                 <button productoId="${producto.id}" type=submit class="botonFormDetalle" style="padding : 0px ; background-color:#b7e3f7; border-color=#b7e3f7">
         <article class="articulo">
             <img src="${producto.imagen}" alt="esperanding">
             <div class="nombre"> ${producto.nombre} </div>
@@ -82,13 +82,12 @@ console.log("antes de empesar");
         type: 'POST',
         data: {busca},
         success: function(response){
-          console.log(response);
           let obj=JSON.parse(response);
             let template='';
             obj.forEach((objs)=>{
               template+= `
-              <form productoId="${objs.id}"" method="POST" action = "./detalleProducto.html" class="formDetalle">
-              <button type="submit" class="botonFormDetalle" style="background-color:#b7e3f7; border-color:#b7e3f7; padding:0px">
+              <form  method="POST" action = "./detalleProducto.html" class="formDetalle">
+              <button productoId="${objs.id}" type="submit" class="botonFormDetalle" style="background-color:#b7e3f7; border-color:#b7e3f7; padding:0px">
      <article class="articulo">
          <img src="${objs.imagen}" alt="esperanding">
          <div class="nombre"> $ ${objs.nombre} </div>
@@ -106,15 +105,19 @@ console.log("antes de empesar");
   }
     });
 
-<<<<<<< HEAD
-   $("form").submit(function () {
-     
-   })
+   $(document).on("click", ".botonFormDetalle",function (e) {
+     console.log("entre a esta madre");
+    let idProducto = $(this).attr("productoId");
+    setId(idProducto);
+    id = idProducto;
+  })
 
-   localStorage.setItem("id", id);
-})
+  function setId(id){
+    this.id = id;
+    localStorage.setItem("id", this.id);
+  }
+
+   
+});
 
 
-=======
-}); 
->>>>>>> 4ee61f812281106e13b69b17eb295edcbc401cfd
