@@ -124,10 +124,10 @@ $(document).ready(function () {
 $(document).on('click','.botonEliminar',function(){
  if(confirm("Estas seguro de querer eliminarlo")){
    let element =$(this)[0].parentElement.parentElement.parentElement.parentElement;
-   let id=(element).attr('id')
+   let id=$(element).attr('productoId');
    console.log(element);
    console.log(id);
-   $.post('../controllers/BD/eliminar.php',{id},function(response){
+   $.post('eliminar.php',{id},function(response){
      listarTodo();
    })
  }
