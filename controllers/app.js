@@ -17,7 +17,7 @@ $(document).ready(function () {
          <div class="nombre"> ${producto.nombre} </div>
         <div class="precio"> $ ${producto.precio} </div>
         <div class="iconoArticulo">
-        <a href="" style="color: black"><i class="fas fa-trash-alt" style="font-size: 15px;"></i></a>
+        <a href="" style="color: black" class="botonEliminar"><i class="fas fa-trash-alt" style="font-size: 15px;"></i></a>
          <a href=""style="color: black"><i class="fas fa-pen" style="font-size: 15px;"></i></a>
          </div>
         </article>
@@ -50,7 +50,7 @@ $(document).ready(function () {
             <div class="nombre"> ${producto.nombre} </div>
             <div class="precio"> $ ${producto.precio} </div>
             <div class="iconoArticulo">
-            <a href="" style="color: black"><i class="fas fa-trash-alt" style="font-size: 15px;"></i></a>
+            <a href="" style="color: black" class="botonEliminar"><i class="fas fa-trash-alt" style="font-size: 15px;"></i></a>
             <a href=""style="color: black"><i class="fas fa-pen" style="font-size: 15px;"></i></a>
             </div>
         </article>
@@ -104,7 +104,7 @@ $(document).ready(function () {
          <div class="nombre"> $ ${objs.nombre} </div>
          <div class="precio"> $ ${objs.precio} </div>
          <div class="iconoArticulo">
-         <a href="" style="color: black"><i class="fas fa-trash-alt" style="font-size: 15px;"></i></a>
+         <a href="" style="color: black" class="botonEliminar"><i class="fas fa-trash-alt" style="font-size: 15px;"></i></a>
          <a href=""style="color: black"><i class="fas fa-pen" style="font-size: 15px;"></i></a>
          </div>
      </article>
@@ -121,6 +121,16 @@ $(document).ready(function () {
     }
   });
 
-
+$(document).on('click','.botonEliminar',function(){
+ if(confirm("Estas seguro de querer eliminarlo")){
+   let element =$(this)[0].parentElement.parentElement.parentElement.parentElement;
+   let id=(element).attr('id')
+   console.log(element);
+   console.log(id);
+   $.post('../controllers/BD/eliminar.php',{id},function(response){
+     listarTodo();
+   })
+ }
+})
 
 });
