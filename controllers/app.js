@@ -106,6 +106,7 @@ console.log("antes de empesar");
   }
     });
 
+<<<<<<< HEAD
    $("form").submit(function () {
      
    })
@@ -114,3 +115,6 @@ console.log("antes de empesar");
 })
 
 
+=======
+}); 
+>>>>>>> 4ee61f812281106e13b69b17eb295edcbc401cfd
