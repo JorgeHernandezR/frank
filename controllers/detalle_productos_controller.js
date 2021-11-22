@@ -2,6 +2,7 @@
 $(document).ready(function(){
     
     let id = localStorage['id'];
+    localStorage.removeItem("id");
     
     $.ajax({
         url: "../controllers/BD/obtenerProducto.php",
