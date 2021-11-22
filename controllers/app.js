@@ -122,12 +122,14 @@ $(document).ready(function () {
   });
 
 $(document).on('click','.botonEliminar',function(){
- if(confirm("Estas seguro de querer eliminarlo")){
-   let element =$(this)[0].parentElement.parentElement.parentElement.parentElement;
+  let element =$(this)[0].parentElement.parentElement.parentElement;
+  console.log(element);
+ if(confirm('Estas seguro de querer eliminarlo')){
+  let element =$(this)[0].parentElement.parentElement.parentElement;
    let id=$(element).attr('productoId');
    console.log(element);
    console.log(id);
-   $.post('eliminar.php',{id},function(response){
+   $.post('../controllers/BD/eliminar.php',{id},function(response){
      listarTodo();
    })
  }

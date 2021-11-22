@@ -26,6 +26,8 @@ SET time_zone = "+00:00";
 --
 -- Table structure for table `producto`
 --
+CREATE Database friki_art_cja_bd;
+USE friki_art_cja_bd;
 
 DROP TABLE IF EXISTS `producto`;
 CREATE TABLE IF NOT EXISTS `producto` (
