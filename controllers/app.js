@@ -19,7 +19,7 @@ $(document).ready(function () {
         <div class="precio"> $ ${producto.precio} </div>
         <div class="iconoArticulo">
         <a href="" style="color: black" class="botonEliminar"><i class="fas fa-trash-alt" style="font-size: 15px;"></i></a>
-         <a href="./editarProducto.html" class="botonEditar" style="color: black"><i class="fas fa-pen" style="font-size: 15px;"></i></a>
+         <a href="./editarProductos.html" class="botonEditar" style="color: black"><i class="fas fa-pen" style="font-size: 15px;"></i></a>
          </div>
         </article>
         
@@ -50,7 +50,7 @@ $(document).ready(function () {
             <div class="precio"> $ ${producto.precio} </div>
             <div class="iconoArticulo">
             <a href="" style="color: black" class="botonEliminar"><i class="fas fa-trash-alt" style="font-size: 15px;"></i></a>
-            <a href="./editarProducto.html" class="botonEditar" style="color: black"><i class="fas fa-pen" style="font-size: 15px;"></i></a>
+            <a href="./editarProductos.html" class="botonEditar" style="color: black"><i class="fas fa-pen" style="font-size: 15px;"></i></a>
             </div>
         </article>
      
@@ -84,7 +84,7 @@ $(document).ready(function () {
          <div class="precio"> $ ${objs.precio} </div>
          <div class="iconoArticulo">
          <a href="" style="color: black" class="botonEliminar"><i class="fas fa-trash-alt" style="font-size: 15px;"></i></a>
-         <a href="./editarProducto.html" class="botonEditar" style="color: black"><i class="fas fa-pen" style="font-size: 15px;"></i></a>
+         <a href="./editarProductos.html" class="botonEditar" style="color: black"><i class="fas fa-pen" style="font-size: 15px;"></i></a>
          </div>
      </article>
      </button>

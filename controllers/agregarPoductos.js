@@ -8,11 +8,10 @@ $(document).ready(function () {
       processData: false,
       contentType: false,
       success: function (response) {
-        alert(form.get("imagen"));
-        console.log(response);
+        alert(response);
       },
     }).done(function () {
-      //$("#formAgregar").trigger("reset");
+      $("#formAgregar").trigger("reset");
     });
   });
 });

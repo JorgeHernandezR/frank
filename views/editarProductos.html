@@ -42,18 +42,18 @@
         </nav>
       </header>
       <h2 class="titulo" style="text-align: center;">Añadir un nuevo producto</h2>
-    <form action="">
+      <form enctype="multipart/form-data" type="POST" id="formEditar" action="">
         <article>
         <strong>Nombre del producto:</strong>
-        <div><input type="text" name="nombre"></div><br>
+        <div><input id="inputNombre" type="text" name="nombre"></div><br>
         <br>
         <strong>Descripcion: </strong>
-        <div><textarea name="descripcion " class ="" cols="30" rows="10" style="margin: auto; width: 330px; height: 90px;"></textarea> </div><br>
+        <div><textarea id="inputDescripcion" name="descripcion" class ="" cols="30" rows="10" style="margin: auto; width: 330px; height: 90px;"></textarea> </div><br>
         <strong>Precio:</strong>
-        <div><input type="number" name="precio"> </div><br>
+        <div><input id="inputPrecio" type="number" name="precio"> </div><br>
         <strong>Imagen:</strong>
-        <div><input type="file" name="imagen"> </div><br>
-        <button class="boton"><strong>Guardar</strong> </button>
+        <div><input id="inputImagen" type="file" name="imagen" placeholder="autoViendo"> </div><br>
+        <input type="button" class="boton" id = "botonEditar" value= "Editar"  style="margin:auto; width:100px; height: 30px; font-weight: bold;">
     </article>
     </form>
 
@@ -88,4 +88,12 @@
       </footer>
     
 </body>
+
+<script
+src="https://code.jquery.com/jquery-3.6.0.js"
+integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+crossorigin="anonymous">
+</script>
+
+<script src="../controllers/editarProductos.js"></script>
 </html>

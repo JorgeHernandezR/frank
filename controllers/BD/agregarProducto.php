@@ -11,7 +11,6 @@
     $rutaImagen = "../public/images/".$nombreArchivo;
 
     $consulta = "INSERT INTO producto VALUES (DEFAULT, '$nombre','$descripcion','$precio','$rutaImagen')";
-    echo $consulta;
 
     $resultado =  mysqli_query($conexion, $consulta);
     if(!$resultado){
@@ -19,6 +18,6 @@
         die("Hubo un error al tratar de agregar el producto".mysqli_error($conexion));
     }else{
         move_uploaded_file($archivo, "../../public/images/".$nombreArchivo);
-        echo "El producto fue agregado con exito";
+        echo "EL PRODUCTO FUE AGREGADO CON EXITO!";
     }
 ?>
