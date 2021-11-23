@@ -42,12 +42,12 @@
         </nav>
       </header>
     <h2 class="titulo" style="text-align: center;">Añadir un nuevo producto</h2>
-    <form action="">
+    <form enctype="multipart/form-data" type="POST" id="formAgregar" action="">
         <article>
         <strong>Nombre del producto:</strong>
         <div><input id="inputNombre" type="text" name="nombre"></div><br>
         <strong>Descripcion: </strong>
-        <div><textarea id="inputDescripcion" name="descripcion " class ="" cols="30" rows="10" style="margin: auto; width: 330px; height: 90px;"></textarea> </div><br>
+        <div><textarea id="inputDescripcion" name="descripcion" class ="" cols="30" rows="10" style="margin: auto; width: 330px; height: 90px;"></textarea> </div><br>
         <strong>Precio:</strong>
         <div><input id="inputPrecio" type="number" name="precio"> </div><br>
         <strong>Imagen:</strong>

@@ -1,8 +1,8 @@
-INSERT INTO `producto` (`id_producto`, `nom_producto`, `descripcion_producto`, `precio`, `imagen`) VALUES (NULL, 'Videojuego Nier Automata PS4', 'Juego de acción y RPG japones ', '1200', '../public/images/Nier.jpeg');
+INSERT INTO `producto` (`id_producto`, `nom_producto`, `descripcion`, `precio`, `imagen`) VALUES (NULL, 'Videojuego Nier Automata PS4', 'Juego de accion y RPG japones ', '1200', '../public/images/Nier.jpeg');
 
 
-INSERT INTO `producto` (`id_producto`, `nom_producto`, `descripcion_producto`, `precio`, `imagen`) VALUES (NULL, 'Camiseta Yuno Mirai Niki ', 'Camiseta estampado anime ', '850', '../public/images/Camisa Mirai.jpeg');
+INSERT INTO `producto` (`id_producto`, `nom_producto`, `descripcion`, `precio`, `imagen`) VALUES (NULL, 'Camiseta Yuno Mirai Niki ', 'Camiseta estampado anime ', '850', '../public/images/Camisa Mirai.jpeg');
 
-INSERT INTO `producto` (`id_producto`, `nom_producto`, `descripcion_producto`, `precio`, `imagen`) VALUES (NULL, 'Maquillaje Kim Chic Palette ', 'Maquillaje para piel completa de la marca Kim Chic ', '1700', '../public/images/KinChi.jpeg');
+INSERT INTO `producto` (`id_producto`, `nom_producto`, `descripcion`, `precio`, `imagen`) VALUES (NULL, 'Maquillaje Kim Chic Palette ', 'Maquillaje para piel completa de la marca Kim Chic ', '1700', '../public/images/KinChi.jpeg');
 
-INSERT INTO `producto` (`id_producto`, `nom_producto`, `descripcion_producto`, `precio`, `imagen`) VALUES (NULL, 'Funko-pop Hatsune Miku ', 'Funko-pop Hatsune miku Diva pop ', '700', '../public/images/FunkoMiku.jpeg');
+INSERT INTO `producto` (`id_producto`, `nom_producto`, `descripcion`, `precio`, `imagen`) VALUES (NULL, 'Funko-pop Hatsune Miku ', 'Funko-pop Hatsune miku Diva pop ', '700', '../public/images/FunkoMiku.jpeg');
