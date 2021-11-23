@@ -11,19 +11,20 @@ $(document).ready(function () {
         console.log(productos);
         productos.forEach((producto) => {
           plantilla += `
-          <form method="POST" action = "./detalleProducto.html" class="formDetalle">
-          <button productoId="${producto.id}" type=submit class="botonFormDetalle" style="padding : 0px ; background-color:#b7e3f7; border-color=#b7e3f7">
+          <form productoId="${producto.id}" method="POST" action = "./detalleProducto.html" class="formDetalle">
           <article class="articulo">
+          <button productoId="${producto.id}" type=submit class="botonFormDetalle" style="padding : 0px ; background-color:#b7e3f7; border-color=#b7e3f7">
           <img src="${producto.imagen}" alt="esperanding">
          <div class="nombre"> ${producto.nombre} </div>
         <div class="precio"> $ ${producto.precio} </div>
+        </button>
         <div class="iconoArticulo">
         <a href="" style="color: black" class="botonEliminar"><i class="fas fa-trash-alt" style="font-size: 15px;"></i></a>
          <a href="./editarProductos.html" class="botonEditar" style="color: black"><i class="fas fa-pen" style="font-size: 15px;"></i></a>
          </div>
         </article>
         
-        </button>
+        
         </form> `;
         });
         $("#mainIndex").html(plantilla);
@@ -42,20 +43,21 @@ $(document).ready(function () {
       console.log(productos);
       productos.forEach((producto) => {
         plantilla += `
-                 <form  method="POST" action = "./detalleProducto.html" class="formDetalle">
-                 <button productoId="${producto.id}" type=submit class="botonFormDetalle" style="padding : 0px ; background-color:#b7e3f7; border-color=#b7e3f7">
+        <form productoId="${producto.id}" method="POST" action = "./detalleProducto.html" class="formDetalle">
         <article class="articulo">
-            <img src="${producto.imagen}" alt="esperanding">
-            <div class="nombre"> ${producto.nombre} </div>
-            <div class="precio"> $ ${producto.precio} </div>
-            <div class="iconoArticulo">
-            <a href="" style="color: black" class="botonEliminar"><i class="fas fa-trash-alt" style="font-size: 15px;"></i></a>
-            <a href="./editarProductos.html" class="botonEditar" style="color: black"><i class="fas fa-pen" style="font-size: 15px;"></i></a>
-            </div>
-        </article>
-     
-        </button>
-      </form> `;
+        <button productoId="${producto.id}" type=submit class="botonFormDetalle" style="padding : 0px ; background-color:#b7e3f7; border-color=#b7e3f7">
+        <img src="${producto.imagen}" alt="esperanding">
+       <div class="nombre"> ${producto.nombre} </div>
+      <div class="precio"> $ ${producto.precio} </div>
+      </button>
+      <div class="iconoArticulo">
+      <a href="" style="color: black" class="botonEliminar"><i class="fas fa-trash-alt" style="font-size: 15px;"></i></a>
+       <a href="./editarProductos.html" class="botonEditar" style="color: black"><i class="fas fa-pen" style="font-size: 15px;"></i></a>
+       </div>
+      </article>
+      
+      
+      </form>  `;
       });
       $("#mainIndex").html(plantilla);
     },
@@ -74,21 +76,23 @@ $(document).ready(function () {
           success: function (response) {
             let obj = JSON.parse(response);
             let template = "";
-            obj.forEach((objs) => {
+            obj.forEach((producto) => {
               template += `
-              <form  method="POST" action = "./detalleProducto.html" class="formDetalle">
-              <button productoId="${objs.id}" type="submit" class="botonFormDetalle" style="background-color:#b7e3f7; border-color:#b7e3f7; padding:0px">
-     <article class="articulo">
-         <img src="${objs.imagen}" alt="esperanding">
-         <div class="nombre"> $ ${objs.nombre} </div>
-         <div class="precio"> $ ${objs.precio} </div>
-         <div class="iconoArticulo">
-         <a href="" style="color: black" class="botonEliminar"><i class="fas fa-trash-alt" style="font-size: 15px;"></i></a>
-         <a href="./editarProductos.html" class="botonEditar" style="color: black"><i class="fas fa-pen" style="font-size: 15px;"></i></a>
-         </div>
-     </article>
-     </button>
-   </form> `;
+              <form productoId="${producto.id}" method="POST" action = "./detalleProducto.html" class="formDetalle">
+              <article class="articulo">
+              <button productoId="${producto.id}"  type=submit class="botonFormDetalle" style="padding : 0px ; background-color:#b7e3f7; border-color=#b7e3f7">
+              <img src="${producto.imagen}" alt="esperanding">
+             <div class="nombre"> ${producto.nombre} </div>
+            <div class="precio"> $ ${producto.precio} </div>
+            </button>
+            <div class="iconoArticulo">
+            <a href="" style="color: black" class="botonEliminar"><i class="fas fa-trash-alt" style="font-size: 15px;"></i></a>
+             <a href="./editarProductos.html" class="botonEditar" style="color: black"><i class="fas fa-pen" style="font-size: 15px;"></i></a>
+             </div>
+            </article>
+            
+            
+            </form>  `;
             });
             $("#mainIndex").html(template);
           },

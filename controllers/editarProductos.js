@@ -14,7 +14,6 @@ $(document).ready(function () {
           $("#inputNombre").val(producto.nombre);
           $("#inputDescripcion").val(producto.descripcion);
           $("#inputPrecio").val(producto.precio);
-          //$("#inputImagen").val("Cualquier valor");
         },
       });
 

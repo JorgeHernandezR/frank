@@ -8,7 +8,6 @@
     $precio = $_POST["precio"];
 
     $consulta = "UPDATE producto SET nom_producto= '$nombre',descripcion = '$descripcion', precio = '$precio' WHERE id_producto = $id";
-    echo $consulta;
     $resultado =  mysqli_query($conexion, $consulta);
     if(!$resultado){
        
